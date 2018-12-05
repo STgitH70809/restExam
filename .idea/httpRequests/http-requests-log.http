@@ -1,0 +1,315 @@
+GET http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+Content-Type: Application/json
+
+{"name":"Nguyen Hoai Danh","age":20}
+
+<> 2018-12-05T095828.200.json
+
+###
+
+GET http://localhost:8080/persons/3
+Accept: */*
+Cache-Control: no-cache
+Content-Type: Application/json
+
+{"name":"Nguyen Hoai Danh","age":20}
+
+<> 2018-12-05T095822.405.json
+
+###
+
+DELETE http://localhost:8080/persons/3
+Accept: */*
+Cache-Control: no-cache
+Content-Type: Application/json
+
+{"name":"Nguyen Hoai Danh","age":20}
+
+<> 2018-12-05T095723.200.txt
+
+###
+
+GET http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+Content-Type: Application/json
+
+{"name":"Nguyen Hoai Danh","age":20}
+
+<> 2018-12-05T095544.200.json
+
+###
+
+PUT http://localhost:8080/persons/3
+Accept: */*
+Cache-Control: no-cache
+Content-Type: Application/json
+
+{"name":"Nguyen Hoai Danh","age":20}
+
+<> 2018-12-05T095418.200.txt
+
+###
+
+GET http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+Content-Type: Application/json
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T095223.200.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+Content-Type: Application/json
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T095011.200.txt
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T094630.415.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T094513.415.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T094408.415.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T094402.415.json
+
+###
+
+GET http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T094353.200.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T094101.415.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+POST http://localhost:8080/persons Accept: */* Cache-Control: no-cache  {"id":"3","name":"Nguyen Danh","age":22}  ###
+
+<> 2018-12-05T093853.415.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T093802.415.json
+
+###
+
+GET http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T093750.200.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T093620.415.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T093607.415.json
+
+###
+
+POST http://localhost:8080/persons%20HTTP/1.1
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T093558.404.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T093209.415.json
+
+###
+
+GET http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T093147.200.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T093107.415.json
+
+###
+
+GET http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T093042.200.json
+
+###
+
+POST http://localhost:8080//persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T092513.415.json
+
+###
+
+POST http://localhost:8080//persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T092431.415.json
+
+###
+
+POST http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T092411.415.json
+
+###
+
+POST http://localhost:8080/persons?=
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"2","name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T092323.415.json
+
+###
+
+GET http://localhost:8080/persons?=
+Accept: */*
+Cache-Control: no-cache
+
+{"Id":"3" , "name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T092237.200.json
+
+###
+
+POST http://localhost:8080/persons?=
+Accept: */*
+Cache-Control: no-cache
+
+{"Id":"3" , "name":"Nguyen Danh","age":22}
+
+<> 2018-12-05T092222.415.json
+
+###
+
+POST http://localhost:8080/persons?=
+Accept: */*
+Cache-Control: no-cache
+
+{"id":"3,"name":"Nguyen Van Danh","age":22}"}
+
+<> 2018-12-05T091847.415.json
+
+###
+
+GET http://localhost:8080/persons
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-12-05T090513.200.json
+
+###
+
