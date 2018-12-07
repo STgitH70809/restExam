@@ -28,23 +28,23 @@ public class personServiceController {
     }
 
     @RequestMapping(value = "/persons/{id}", method = RequestMethod.DELETE)
-    public String delete(@PathVariable("id") String id) {
+    public Collection<Person> delete(@PathVariable("id") String id) {
         personRepo.remove(id);
-        return "person is deleted successfully";
+        return personRepo.values();
     }
 
     @RequestMapping(value = "/persons/{id}", method = RequestMethod.PUT)
-    public String updatePerson(@PathVariable("id") String id, @RequestBody Person person) {
+    public Collection<Person> updatePerson(@PathVariable("id") String id, @RequestBody Person person) {
         personRepo.remove(id);
         person.setId(id);
         personRepo.put(id, person);
-        return "person is updated successfully";
+        return personRepo.values();
     }
 
     @RequestMapping(value = "/persons", method = RequestMethod.POST)
-    public String createPerson(@RequestBody Person person) {
+    public Collection<Person> createPerson(@RequestBody Person person) {
         personRepo.put(person.getId(), person);
-        return "person is created successfully";
+        return personRepo.values();
     }
 
     @RequestMapping(value = "/persons")

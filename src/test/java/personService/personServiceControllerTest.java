@@ -27,29 +27,31 @@ public class personServiceControllerTest {
     }
 
     @Test
-    public void getPerson_void_personList() {
+    public void a_getPerson_void_personList() {
         webClient.get().uri("/persons").exchange().expectStatus().isOk()
-                .expectBody().json("[{\"id\":\"2\",\"name\":\"Nguyen Hong Nhat\",\"age\":25},{\"id\":\"3\",\"name\":\"Nguyen Hoai Danh\",\"age\":22}]");
+                .expectBody().json("[{\"id\":\"1\",\"name\":\"Pham Hong Nhat\",\"age\":20},{\"id\":\"2\",\"name\":\"Nguyen Danh\",\"age\":22}]");
     }
 
     @Test
-    public void createPerson_newPerson_successfulMessage() {
+    public void b_createPerson_newPerson_successfulMessage() {
         Person person = new Person("3","Nguyen Hoai Danh",22);
         webClient.post().uri("/persons").contentType(MediaType.APPLICATION_JSON_UTF8).accept(MediaType.APPLICATION_JSON_UTF8)
-                .body(Mono.just(person),Person.class).exchange().expectStatus().isOk().expectBody().returnResult().equals("person is created successfully");
+                .body(Mono.just(person),Person.class).exchange().expectStatus().isOk().expectBody()
+                .json("[{\"id\":\"1\",\"name\":\"Pham Hong Nhat\",\"age\":20},{\"id\":\"2\",\"name\":\"Nguyen Danh\",\"age\":22},{\"id\":\"3\",\"name\":\"Nguyen Hoai Danh\",\"age\":22}]");
     }
 
     @Test
-    public void e_updatePerson_personUpdateData_successfulMessage() {
+    public void c_updatePerson_personUpdateData_successfulMessage() {
         Person person = new Person("2","Nguyen Hong Nhat",25);
         webClient.put().uri("/persons/{id}", person.getId())
-                .body(Mono.just(person),Person.class).exchange().expectStatus().isOk().expectBody().returnResult().equals("person is updated successfully");
+                .body(Mono.just(person),Person.class).exchange().expectStatus().isOk().expectBody()
+                .json("[{\"id\":\"1\",\"name\":\"Pham Hong Nhat\",\"age\":20},{\"id\":\"2\",\"name\":\"Nguyen Hong Nhat\",\"age\":25},{\"id\":\"3\",\"name\":\"Nguyen Hoai Danh\",\"age\":22}]");
     }
 
     @Test
-    public void delete_personId_successfulMessage() {
-        webClient.delete().uri("/persons/{id}", "1").exchange().expectBody()
-                .returnResult().equals("person is deleted successfully");
+    public void d_delete_personId_successfulMessage() {
+        webClient.delete().uri("/persons/{id}", "1").exchange().expectStatus().isOk().expectBody()
+                .json("[{\"id\":\"2\",\"name\":\"Nguyen Hong Nhat\",\"age\":25},{\"id\":\"3\",\"name\":\"Nguyen Hoai Danh\",\"age\":22}]");
     }
 
 }
