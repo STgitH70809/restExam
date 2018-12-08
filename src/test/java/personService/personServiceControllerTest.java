@@ -33,7 +33,7 @@ public class personServiceControllerTest {
     }
 
     @Test
-    public void b_createPerson_newPerson_successfulMessage() {
+    public void b_createPerson_newPerson_newListAfterInsert() {
         Person person = new Person("3","Nguyen Hoai Danh",22);
         webClient.post().uri("/persons").contentType(MediaType.APPLICATION_JSON_UTF8).accept(MediaType.APPLICATION_JSON_UTF8)
                 .body(Mono.just(person),Person.class).exchange().expectStatus().isOk().expectBody()
@@ -41,7 +41,15 @@ public class personServiceControllerTest {
     }
 
     @Test
-    public void c_updatePerson_personUpdateData_successfulMessage() {
+    public void b_createPerson_personAlreadyInList_emptyList() {
+        Person person = new Person("2","Nguyen Danh",22);
+        webClient.post().uri("/persons").contentType(MediaType.APPLICATION_JSON_UTF8).accept(MediaType.APPLICATION_JSON_UTF8)
+                .body(Mono.just(person),Person.class).exchange().expectStatus().isOk().expectBody()
+                .json("[]");
+    }
+
+    @Test
+    public void c_updatePerson_personUpdateData_listAfterUpdate() {
         Person person = new Person("2","Nguyen Hong Nhat",25);
         webClient.put().uri("/persons/{id}", person.getId())
                 .body(Mono.just(person),Person.class).exchange().expectStatus().isOk().expectBody()
@@ -49,7 +57,21 @@ public class personServiceControllerTest {
     }
 
     @Test
-    public void d_delete_personId_successfulMessage() {
+    public void c_updatePerson_invalidPersonUpdateData_emptyList() {
+        Person person = new Person("4","Nguyen Hong Nhat",25);
+        webClient.put().uri("/persons/{id}", person.getId())
+                .body(Mono.just(person),Person.class).exchange().expectStatus().isOk().expectBody()
+                .json("[]");
+    }
+
+    @Test
+    public void d_delete_invalidPersonId_emptyList() {
+        webClient.delete().uri("/persons/{id}", "4").exchange().expectStatus().isOk().expectBody()
+                .json("[]");
+    }
+
+    @Test
+    public void d_delete_personId_listAfterDelete() {
         webClient.delete().uri("/persons/{id}", "1").exchange().expectStatus().isOk().expectBody()
                 .json("[{\"id\":\"2\",\"name\":\"Nguyen Hong Nhat\",\"age\":25},{\"id\":\"3\",\"name\":\"Nguyen Hoai Danh\",\"age\":22}]");
     }
